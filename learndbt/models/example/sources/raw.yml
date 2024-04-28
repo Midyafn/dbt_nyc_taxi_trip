@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: nyc_taxi_trip
+        columns:
+          - name: total_amount
+            tests:
+              - not_null
+          - name: lpep_pickup_datetime
+            tests:
+              - not_null
+          - name: lpep_dropoff_datetime
+            tests:
+              - not_null
+          - name: trip_distance 
+            tests:
+              - not_null
+              # - accepted_range:
+              #     min_value: 0.0
+
