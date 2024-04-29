@@ -3,8 +3,8 @@
 WITH month_total AS(
   SELECT
   payment_type,
-  EXTRACT(YEAR FROM lpep_pickup_datetime) AS year,
-  EXTRACT(MONTH FROM lpep_pickup_datetime) AS month,
+  {{ year_extract('lpep_pickup_datetime') }} AS year,
+  {{ month_extract('lpep_pickup_datetime') }} AS month,
   COUNT(*) AS transaction_count,
   SUM(total_amount) AS total_transactions
   FROM
